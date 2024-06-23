@@ -1,6 +1,6 @@
 const images = document.querySelectorAll("img");
 
-const callback = (entries, observer) => {
+const callback = (entries) => {
   entries.forEach((entry) => {
     const imageName = entry.target.getAttribute("data-image-name");
     if (entry.isIntersecting) {
@@ -19,6 +19,6 @@ const options = {
 
 const observer = new IntersectionObserver(callback, options);
 
-images.forEach((box) => {
-  observer.observe(box);
+images.forEach((image) => {
+  observer.observe(image);
 });
