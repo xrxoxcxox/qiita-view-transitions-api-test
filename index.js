@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOMツリーの解析が終わりました");
+});
+
+window.addEventListener("load", function () {
+  console.log("ページの読み込みが完了しました");
+});
+
 const images = document.querySelectorAll("img");
 
 const callback = (entries) => {
