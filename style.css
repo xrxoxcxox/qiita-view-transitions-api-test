@@ -14,8 +14,8 @@ body {
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
-  padding: clamp(16px, 4vw, 32px);
-  gap: 32px;
+  padding: 2rem;
+  gap: 2rem;
   min-height: 100dvh;
 }
 
@@ -32,6 +32,7 @@ body {
 
 @view-transition {
   navigation: auto;
+  types: slide, forwards;
 }
 
 /* top page */
@@ -40,7 +41,7 @@ body {
   align-self: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(16px, 4vw, 32px);
+  gap: 2rem;
   width: min(100%, 800px);
   flex-grow: 1;
 }
@@ -63,6 +64,14 @@ body {
 
 .top-image-3 {
   view-transition-name: view-transitions-api-test-3;
+}
+
+.top-paragprahs {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-size: 1.25rem;
 }
 
 /* sub page */
@@ -96,20 +105,14 @@ body {
   view-transition-name: view-transitions-api-test-3;
 }
 
-.sub-paragraph {
+.sub-paragraphs {
   grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
-  row-gap: clamp(16px, 4vw, 32px);
-  font-size: 1.5rem;
+  row-gap: 2rem;
+  font-size: 1.25rem;
 }
 
-.animated-text {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-@keyframes fadeIn {
-  to {
-      opacity: 1;
-  }
+::view-transition-group(*) {
+  animation-duration: 1s;
 }

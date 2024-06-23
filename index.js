@@ -2,10 +2,11 @@ const images = document.querySelectorAll("img");
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
+    const imageName = entry.target.getAttribute("data-image-name");
     if (entry.isIntersecting) {
-      const imageName = entry.target.getAttribute("data-image-name");
       console.log(`${imageName} が描画されました`);
-      // observer.unobserve(entry.target);
+    } else {
+      console.log(`${imageName}が見えなくなりました`);
     }
   });
 };
